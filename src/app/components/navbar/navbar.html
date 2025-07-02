@@ -1,10 +1,18 @@
 <nav class="w-full bg-white shadow sticky top-0 z-50">
-  <div class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
-    <button (click)="scrollToSection('header')" class="font-bold text-xl">
+  <div
+    class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6 fade-in"
+  >
+    <button
+      (click)="scrollToSection('header')"
+      class="font-bold text-xl transition-transform duration-300 hover:scale-105"
+    >
       BotBite
     </button>
 
-    <button class="md:hidden" (click)="isOpen.set(!isOpen())">
+    <button
+      class="md:hidden transition-transform duration-300 hover:scale-110"
+      (click)="isOpen.set(!isOpen())"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="h-6 w-6"
@@ -23,24 +31,33 @@
 
     <ul class="hidden md:flex space-x-4 text-sm font-medium">
       <li>
-        <button (click)="scrollToSection('about')" class="hover:underline">
+        <button
+          (click)="scrollToSection('about')"
+          class="hover:underline transition duration-200 ease-in-out hover:text-blue-600"
+        >
           ¿Qué es?
         </button>
       </li>
       <li>
-        <button (click)="scrollToSection('services')" class="hover:underline">
+        <button
+          (click)="scrollToSection('services')"
+          class="hover:underline transition duration-200 ease-in-out hover:text-blue-600"
+        >
           Servicios
         </button>
       </li>
       <li>
-        <button (click)="scrollToSection('contact')" class="hover:underline">
+        <button
+          (click)="scrollToSection('contact')"
+          class="hover:underline transition duration-200 ease-in-out hover:text-blue-600"
+        >
           Contacto
         </button>
       </li>
       <li>
         <button
           (click)="navigateToRoute('/aviso-de-privacidad')"
-          class="hover:underline"
+          class="hover:underline transition duration-200 ease-in-out text-gray-700 hover:text-blue-600"
         >
           Aviso de Privacidad
         </button>
@@ -48,7 +65,7 @@
       <li>
         <button
           (click)="navigateToRoute('/proteccion-datos')"
-          class="hover:underline"
+          class="hover:underline transition duration-200 ease-in-out text-gray-700 hover:text-blue-600"
         >
           Aviso de Datos
         </button>
@@ -56,27 +73,39 @@
     </ul>
   </div>
 
-  <div *ngIf="isOpen()" class="md:hidden px-6 pb-4">
+  <div
+    *ngIf="isOpen()"
+    class="md:hidden px-6 pb-4 slide-down transition-all duration-300 ease-in-out"
+  >
     <ul class="flex flex-col space-y-2 text-sm font-medium">
       <li>
-        <button (click)="scrollToSection('about')" class="hover:underline">
+        <button
+          (click)="scrollToSection('about')"
+          class="hover:underline transition duration-200 ease-in-out hover:text-blue-600"
+        >
           ¿Qué es?
         </button>
       </li>
       <li>
-        <button (click)="scrollToSection('services')" class="hover:underline">
+        <button
+          (click)="scrollToSection('services')"
+          class="hover:underline transition duration-200 ease-in-out hover:text-blue-600"
+        >
           Servicios
         </button>
       </li>
       <li>
-        <button (click)="scrollToSection('contact')" class="hover:underline">
+        <button
+          (click)="scrollToSection('contact')"
+          class="hover:underline transition duration-200 ease-in-out hover:text-blue-600"
+        >
           Contacto
         </button>
       </li>
       <li>
         <button
           (click)="navigateToRoute('/aviso-de-privacidad')"
-          class="hover:underline"
+          class="hover:underline transition duration-200 ease-in-out hover:text-blue-600"
         >
           Aviso de Privacidad
         </button>
@@ -84,7 +113,7 @@
       <li>
         <button
           (click)="navigateToRoute('/proteccion-datos')"
-          class="hover:underline"
+          class="hover:underline transition duration-200 ease-in-out hover:text-blue-600"
         >
           Aviso de Datos
         </button>

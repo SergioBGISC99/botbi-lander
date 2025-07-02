@@ -16,13 +16,26 @@ export class Navbar {
 
   scrollToSection(id: string) {
     this.router.navigate(['home']).then(() => {
-      setTimeout(() => this.scroller.scrollToAnchor(id), 100);
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          const yOffset = 500;
+          let y =
+            element.getBoundingClientRect().top + window.pageYOffset - yOffset;
+
+          if (y < 0) y = 0;
+
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 50);
       this.isOpen.set(false);
     });
   }
 
   navigateToRoute(name: string) {
-    this.router.navigate([name]);
+    this.router.navigate([name]).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
     this.isOpen.set(false);
   }
 }
